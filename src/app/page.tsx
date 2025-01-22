@@ -4,27 +4,11 @@ import mailFormSchema from "@/utils/validation/mail-form";
 import { FormData } from "@/types/form-data";
 import { getErrorMessage } from "@/utils/error";
 
-export function SubmitButton() {
-  const {pending} = useFormStatus()
-
-  return (
-    <button
-      type="submit"
-      aria-disabled={pending}
-      className="w-full px-4 bg-blue-500 py-2 text-white font-medium rounded-md"
-    >
-      {pending ? 'Sending email...' : 'Send mail'}
-    </button>
-  )
-}
-
 export default async function Home() {
   const sendMail = async (formData: FormData) => {
     'use server'
   
     try {
-      //throw new Error('Generic error Not implemented');
-      //throw 'Cool error'
       // Validate the data
       mailFormSchema.parse(formData);
   
