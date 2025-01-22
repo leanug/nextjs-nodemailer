@@ -1,9 +1,6 @@
 'use client'
 
 import { useFormStatus } from 'react-dom';
-//import { sendMail } from '@/app/actions/send-mail';
-import mailFormSchema from "@/utils/validation/mail-form";
-import nodemailer from "nodemailer";
 
 export function SubmitButton() {
   const {pending} = useFormStatus()
